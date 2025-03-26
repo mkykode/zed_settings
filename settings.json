@@ -1,0 +1,185 @@
+{
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "sidebar": {
+    "show_hidden_files": true
+  },
+  "theme": {
+    "light": "One Dark Pro",
+    "dark": "One Dark Pro"
+  },
+  "buffer_font_size": 13.0,
+  "buffer_font_features": {
+    "calt": true,
+    "liga": true
+  },
+  "autosave": "on_focus_change",
+  "buffer_font_family": "Monaspace Neon Var",
+  "ui_font_family": "Monaspace Neon Var",
+  "vim_mode": true,
+  "vim": {
+    "toggle_relative_line_numbers": false,
+    "use_multiline_find": true,
+    "use_system_clipboard": "always"
+  },
+  "command_aliases": {
+    "W": "w",
+    "Wq": "wq",
+    "Q": "q"
+  },
+  "ui_font_features": {
+    "calt": true,
+    "liga": true
+  },
+  "relative_line_numbers": true,
+  "project_panel": {
+    "dock": "right"
+  },
+  "auto_update": true,
+  "auto_save": "on",
+  "terminal": {
+    "font_family": "MesloLGS NF",
+    "font_size": 12
+  },
+  "default_dock_anchor": "expanded",
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-7-sonnet-latest"
+    },
+    "version": "2"
+  },
+  "language_models": {
+    "google": {
+      "version": "1",
+      "available_models": [
+        {
+          "name": "gemini-2.5-pro-exp-03-25",
+          "display_name": "Gemini 2.5 pro",
+          "max_tokens": 1048576
+        }
+      ]
+    }
+  },
+  "format_on_save": "on",
+  "soft_wrap": "preferred_line_length",
+  "show_wrap_guides": true,
+  "wrap_guides": [100, 120],
+  "tabs": {
+    "file_icons": true
+  },
+  "lsp": {
+    "eslint": {
+      "enabled": true
+    },
+    "typescript": {
+      "enabled": true
+    },
+    "javascript": {
+      "enabled": true
+    },
+    "solargraph": {
+      "settings": {
+        "use_bundler": false
+      },
+      "initialization_options": {
+        "diagnostics": true,
+        "formatting": true
+      }
+    },
+    "phpactor": {
+      "command": "~/.local/bin/phpactor",
+      "initialization_options": {
+        "language_server_phpstan.enabled": false,
+        "language_server_psalm.enabled": false,
+        "language_server_worse_reflection.diagnostics.enable": true,
+        "php_code_sniffer.enabled": true,
+        "php_code_sniffer.bin": "/Users/jullweber/.composer/vendor/bin/phpcs",
+        "php_code_sniffer.args": ["--standard=WordPress", "--report=json"]
+      }
+    }
+  },
+  "languages": {
+    "JavaScript": {
+      "formatter": "prettier",
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+        "source.fixAll.eslint": true
+      }
+    },
+    "TypeScript": {
+      "formatter": "prettier"
+    },
+    "JSX": {
+      "formatter": "prettier"
+    },
+    "TSX": {
+      "formatter": "prettier"
+    },
+    "CSS": {
+      "formatter": "prettier"
+    },
+    "SCSS": {
+      "formatter": "prettier"
+    },
+    "HTML": {
+      "formatter": "prettier"
+    },
+    "JSON": {
+      "formatter": "prettier"
+    },
+    "YAML": {
+      "formatter": "prettier"
+    },
+    "Markdown": {
+      "formatter": "prettier"
+    },
+    "Ruby": {
+      "language_servers": ["solargraph", "!ruby-lsp", "rubocop"],
+      "formatter": "language_server"
+    },
+    "PHP": {
+      "formatter": {
+        "external": {
+          "command": "/Users/jullweber/.local/bin/phpcbf-wrapper",
+          "arguments": ["-"]
+        }
+      },
+      "language_servers": ["phpactor"]
+    },
+    "Rust": {
+      "formatter": {
+        "external": {
+          "command": "rustfmt",
+          "arguments": ["--emit", "stdout"]
+        }
+      }
+    },
+    "Liquid": {
+      "formatter": "prettier"
+    }
+  },
+  "active_pane_modifiers": {
+    "inactive_opacity": 0.95
+  },
+  "diagnostics": {
+    "include_warnings": true,
+    "inline": {
+      "enabled": true
+    }
+  },
+  "auto_indent_on_paste": false,
+  "slash_commands": {
+    "docs": {
+      "enabled": true
+    }
+  },
+  "preview_tabs": {
+    "enabled": true
+  }
+}
