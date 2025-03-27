@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [
   {
     "context": "VimControl && !menu",
@@ -29,42 +28,13 @@
       "ctrl-w l": "workspace::ActivatePaneRight",
       "ctrl-w k": "workspace::ActivatePaneUp",
       "ctrl-w j": "workspace::ActivatePaneDown"
-=======
-// Zed keymap
-//
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: Open Default Keymap`
-// from the command palette.
-[
-  {
-    "context": "Workspace",
-    "bindings": {
-      // "shift shift": "file_finder::Toggle"
-    }
-  },
-  {
-    "context": "Editor",
-    "bindings": {
-      // "j k": ["workspace::SendKeystrokes", "escape"]
->>>>>>> ced88cb (feat: Add Zed keymap and settings JSON files)
     }
   },
   {
     "context": "vim_mode == visual",
     "bindings": {
-<<<<<<< HEAD
       "shift-s": ["vim::PushAddSurrounds", {}],
       "shift-x": "vim::Exchange"
-=======
-      "shift-s": [
-        "vim::PushOperator",
-        {
-          "AddSurrounds": {}
-        }
-      ]
->>>>>>> ced88cb (feat: Add Zed keymap and settings JSON files)
     }
   }
 ]
