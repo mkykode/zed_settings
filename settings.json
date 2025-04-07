@@ -49,8 +49,8 @@
   "default_dock_anchor": "expanded",
   "assistant": {
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
+      "provider": "openai",
+      "model": "gpt-4o"
     },
     "version": "2"
   },
@@ -150,6 +150,18 @@
     },
     "Liquid": {
       "formatter": "prettier"
+    },
+    "Nix": {
+      "language_servers": ["/run/current-system/sw/bin/nixd"],
+      "formatter": {
+        "external": {
+          "command": "/run/current-system/sw/bin/alejandra", // or "nixfmt"
+          "arguments": ["--quiet", "--"]
+        }
+      }
+    },
+    "env": {
+      "language_servers": ["/run/current-system/sw/bin/dotenv-linter"]
     }
   },
   "active_pane_modifiers": {
