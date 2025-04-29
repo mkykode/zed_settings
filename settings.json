@@ -9,10 +9,7 @@
   "sidebar": {
     "show_hidden_files": true
   },
-  "theme": {
-    "light": "One Dark Pro",
-    "dark": "One Dark Pro"
-  },
+  "theme": "One Dark Pro",
   "buffer_font_size": 13.0,
   "buffer_font_features": {
     "calt": true,
@@ -50,7 +47,7 @@
   "assistant": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
+      "model": "claude-3-7-sonnet-thinking-latest"
     },
     "version": "2"
   },
@@ -71,16 +68,10 @@
     "javascript": {
       "enabled": true
     },
-    "solargraph": {
+    "rubocop": {
       "settings": {
         "use_bundler": false
       },
-      "initialization_options": {
-        "diagnostics": true,
-        "formatting": true
-      }
-    },
-    "phpactor": {
       "command": "~/.local/bin/phpactor",
       "initialization_options": {
         "language_server_phpstan.enabled": false,
@@ -128,7 +119,7 @@
       "formatter": "prettier"
     },
     "Ruby": {
-      "language_servers": ["solargraph", "!ruby-lsp", "rubocop"],
+      "language_servers": ["!solargraph", "!ruby-lsp", "rubocop"],
       "formatter": "language_server"
     },
     "PHP": {
@@ -181,5 +172,28 @@
   },
   "preview_tabs": {
     "enabled": true
+  },
+  "context_servers": {
+    "mcp-server-github": {
+      "settings": {
+        "github_personal_access_token": ""
+      }
+    },
+    "browser-tools-context-server": {
+      "settings": {
+        "port": 3025,
+        "host": "127.0.0.1"
+      }
+    },
+    "mcp-server-figma": {
+      "settings": {
+        "figma_api_key": ""
+      }
+    },
+    "mcp-server-firecrawl": {
+      "settings": {
+        "firecrawl_api_key": ""
+      }
+    }
   }
 }
