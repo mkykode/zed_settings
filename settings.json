@@ -194,6 +194,13 @@
       "settings": {
         "firecrawl_api_key": ""
       }
+    },
+     "Context7": {
+      "command": {
+        "path": "npx",
+        "args": ["-y", "@upstash/context7-mcp@latest"]
+      },
+      "settings": {}
     }
   }
 }
