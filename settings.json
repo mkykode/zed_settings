@@ -9,7 +9,7 @@
   "sidebar": {
     "show_hidden_files": true
   },
-  "theme": "One Dark Pro",
+  "theme": "One Dark",
   "buffer_font_size": 13.0,
   "buffer_font_features": {
     "calt": true,
@@ -172,35 +172,5 @@
   },
   "preview_tabs": {
     "enabled": true
-  },
-  "context_servers": {
-    "mcp-server-github": {
-      "settings": {
-        "github_personal_access_token": ""
-      }
-    },
-    "browser-tools-context-server": {
-      "settings": {
-        "port": 3025,
-        "host": "127.0.0.1"
-      }
-    },
-    "mcp-server-figma": {
-      "settings": {
-        "figma_api_key": ""
-      }
-    },
-    "mcp-server-firecrawl": {
-      "settings": {
-        "firecrawl_api_key": ""
-      }
-    },
-     "Context7": {
-      "command": {
-        "path": "npx",
-        "args": ["-y", "@upstash/context7-mcp@latest"]
-      },
-      "settings": {}
-    }
   }
 }
