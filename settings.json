@@ -167,5 +167,13 @@
   "auto_indent_on_paste": false,
   "preview_tabs": {
     "enabled": true
+  },
+  "context_servers": {
+    "eslint": {
+      "command": {
+        "path": "/Users/jullweber/.volta/bin/npx",
+        "args": ["eslint", "--mcp"]
+      }
+    }
   }
 }
