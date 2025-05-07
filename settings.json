@@ -44,7 +44,7 @@
     "font_size": 12
   },
   "default_dock_anchor": "expanded",
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-7-sonnet-latest"
@@ -165,11 +165,6 @@
     }
   },
   "auto_indent_on_paste": false,
-  "slash_commands": {
-    "docs": {
-      "enabled": true
-    }
-  },
   "preview_tabs": {
     "enabled": true
   }
