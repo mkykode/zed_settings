@@ -22,7 +22,13 @@
   "vim": {
     "toggle_relative_line_numbers": false,
     "use_multiline_find": true,
-    "use_system_clipboard": "always"
+    "use_system_clipboard": "always",
+    "cursor_shape": {
+      "normal": "hollow",
+      "insert": "bar",
+      "replace": "underline",
+      "visual": "block"
+    }
   },
   "command_aliases": {
     "W": "w",
@@ -47,7 +53,7 @@
   "agent": {
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-latest"
+      "model": "claude-3-7-sonnet-thinking-latest"
     },
     "version": "2"
   },
@@ -80,6 +86,13 @@
         "php_code_sniffer.enabled": true,
         "php_code_sniffer.bin": "/Users/jullweber/.composer/vendor/bin/phpcs",
         "php_code_sniffer.args": ["--standard=WordPress", "--report=json"]
+      }
+    },
+    "tailwindcss-language-server": {
+      "settings": {
+        "includeLanguages": {
+          "liquid": "html"
+        }
       }
     }
   },
@@ -140,7 +153,14 @@
       }
     },
     "Liquid": {
-      "formatter": "prettier"
+      "prettier": {
+        "allowed": true,
+        "plugins": [
+          "@shopify/prettier-plugin-liquid",
+          "prettier-plugin-tailwindcss"
+        ]
+      },
+      "language_servers": ["tailwindcss-language-server", "..."]
     },
     "Nix": {
       "language_servers": ["/run/current-system/sw/bin/nixd"],
