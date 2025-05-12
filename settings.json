@@ -1,4 +1,30 @@
 {
+  "ssh_connections": [
+    {
+      "host": "goldenstate",
+      "projects": [
+        {
+          "paths": ["/bitnami"]
+        }
+      ]
+    },
+    {
+      "host": "findyourparadise",
+      "projects": [
+        {
+          "paths": ["/bitnami/wordpress"]
+        }
+      ]
+    },
+    {
+      "host": "shltr",
+      "projects": [
+        {
+          "paths": ["/bitnami/wordpress"]
+        }
+      ]
+    }
+  ],
   "features": {
     "edit_prediction_provider": "zed"
   },
@@ -51,6 +77,8 @@
   },
   "default_dock_anchor": "expanded",
   "agent": {
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-3-7-sonnet-thinking-latest"
@@ -194,6 +222,23 @@
         "path": "/Users/jullweber/.volta/bin/npx",
         "args": ["eslint", "--mcp"]
       }
+    },
+    "awslabs.aws-documentation-mcp-server": {
+      "command": {
+        "path": "/run/current-system/sw/bin/uvx",
+        "args": ["awslabs.aws-documentation-mcp-server@latest"],
+        "env": {
+          "FASTMCP_LOG_LEVEL": "ERROR"
+        }
+      },
+      "disabled": false,
+      "autoApprove": []
+    }
+  },
+  "browser-tools-context-server": {
+    "settings": {
+      "port": 3025,
+      "host": "127.0.0.1"
     }
   }
 }
