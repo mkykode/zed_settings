@@ -35,7 +35,7 @@
   "sidebar": {
     "show_hidden_files": true
   },
-  "theme": "One Dark",
+  "theme": "Catppuccin Mocha",
   "buffer_font_size": 13.0,
   "buffer_font_features": {
     "calt": true,
@@ -80,8 +80,8 @@
     "always_allow_tool_actions": true,
     "default_profile": "write",
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-7-sonnet-thinking-latest"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-thinking-latest"
     },
     "version": "2"
   },
@@ -173,12 +173,8 @@
       "language_servers": ["phpactor"]
     },
     "Rust": {
-      "formatter": {
-        "external": {
-          "command": "rustfmt",
-          "arguments": ["--emit", "stdout"]
-        }
-      }
+      "format_on_save": "on",
+      "formatter": "language_server"
     },
     "Liquid": {
       "prettier": {
@@ -201,6 +197,16 @@
     },
     "env": {
       "language_servers": ["/run/current-system/sw/bin/dotenv-linter"]
+    },
+    "GLSL": {
+      "format_on_save": "on",
+      "language_servers": ["/run/current-system/sw/bin/glsl_analyzer"],
+      "formatter": "language_server"
+    },
+    "Python": {
+      "language_servers": ["ruff"],
+      "format_on_save": "on",
+      "formatter": "language_server"
     }
   },
   "active_pane_modifiers": {
