@@ -103,17 +103,10 @@
       "enabled": true
     },
     "rubocop": {
+      "command": "/run/current-system/sw/bin/rubocop",
+      "args": ["--lsp"],
       "settings": {
         "use_bundler": false
-      },
-      "command": "~/.local/bin/phpactor",
-      "initialization_options": {
-        "language_server_phpstan.enabled": false,
-        "language_server_psalm.enabled": false,
-        "language_server_worse_reflection.diagnostics.enable": true,
-        "php_code_sniffer.enabled": true,
-        "php_code_sniffer.bin": "/Users/jullweber/.composer/vendor/bin/phpcs",
-        "php_code_sniffer.args": ["--standard=WordPress", "--report=json"]
       }
     },
     "tailwindcss-language-server": {
@@ -190,7 +183,7 @@
       "language_servers": ["/run/current-system/sw/bin/nixd"],
       "formatter": {
         "external": {
-          "command": "/run/current-system/sw/bin/alejandra", // or "nixfmt"
+          "command": "/run/current-system/sw/bin/alejandra",
           "arguments": ["--quiet", "--"]
         }
       }
