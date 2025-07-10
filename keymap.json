@@ -1,7 +1,5 @@
 [
   {
-<<<<<<< HEAD
-=======
     "context": "VimControl && !menu",
     "bindings": {
       "ctrl-g": "go_to_line::Toggle",
@@ -42,7 +40,6 @@
     }
   },
   {
->>>>>>> e7bc909 (feat: Update key bindings and settings for Vim mode)
     "context": "vim_mode == visual",
     "bindings": {
       "shift-x": "vim::Exchange",
