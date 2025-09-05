@@ -1,36 +1,5 @@
 [
   {
-    "context": "VimControl && !menu",
-    "bindings": {
-      "ctrl-g": "go_to_line::Toggle",
-      "w": "vim::NextSubwordStart",
-      "b": "vim::PreviousSubwordStart",
-      "e": "vim::NextSubwordEnd",
-      "g e": "vim::PreviousSubwordEnd",
-      "left": "vim::WrappingLeft",
-      "right": "vim::WrappingRight",
-      "h": "vim::WrappingLeft",
-      "l": "vim::WrappingRight"
-    }
-  },
-  {
-    "context": "vim_mode == normal && !menu",
-    "bindings": {
-      "s": "vim::PushSneak",
-      "shift-s": "vim::PushSneakBackward"
-    }
-  },
-  {
-    "context": "vim_mode == insert",
-    "bindings": {
-      "j k": "vim::NormalBefore"
-    }
-  },
-  {
-    "context": "EmptyPane || SharedScreen",
-    "bindings": {}
-  },
-  {
     "context": "Dock",
     "bindings": {
       "ctrl-w h": "workspace::ActivatePaneLeft",
@@ -40,11 +9,41 @@
     }
   },
   {
-    "context": "vim_mode == visual",
+    "context": "VimControl && !menu",
     "bindings": {
-      "shift-x": "vim::Exchange",
+      "ctrl-g": "go_to_line::Toggle",
+      "left": "vim::WrappingLeft",
+      "right": "vim::WrappingRight",
+      "h": "vim::WrappingLeft",
+      "l": "vim::WrappingRight"
+    }
+  },
+  {
+    "context": "VimControl && !menu && vim_mode != operator",
+    "bindings": {
+      "w": "vim::NextSubwordStart",
+      "b": "vim::PreviousSubwordStart",
+      "e": "vim::NextSubwordEnd",
+      "g e": "vim::PreviousSubwordEnd"
+    }
+  },
+  {
+    "context": "vim_mode == normal || vim_mode == visual",
+    "bindings": {
       "s": "vim::PushSneak",
       "shift-s": "vim::PushSneakBackward"
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "shift-x": "vim::Exchange"
+    }
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "j k": "vim::NormalBefore"
     }
   }
 ]
