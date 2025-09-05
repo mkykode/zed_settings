@@ -1,21 +1,4 @@
 {
-  "context_servers": {
-    "mcp-server-context7": {
-      "source": "extension",
-      "settings": {
-        "default_minimum_tokens": "10000"
-      }
-    },
-    "awslabs.aws-documentation-mcp-server": {
-      "source": "custom",
-      "args": ["awslabs.aws-documentation-mcp-server@latest"],
-      "command": "/run/current-system/sw/bin/uvx",
-      "env": {
-        "FASTMCP_LOG_LEVEL": "ERROR",
-        "AWS_DOCUMENTATION_PARTITION": "aws"
-      }
-    }
-  },
   "ssh_connections": [
     {
       "host": "goldenstate",
@@ -59,18 +42,6 @@
   "buffer_font_family": "Monaspace Neon Var",
   "ui_font_family": "Monaspace Neon Var",
   "vim_mode": true,
-  "vim": {
-    "toggle_relative_line_numbers": true,
-    "use_system_clipboard": "always",
-    "use_smartcase_find": true,
-    "highlight_on_yank_duration": 200,
-    "cursor_shape": {
-      "normal": "hollow",
-      "insert": "bar",
-      "replace": "underline",
-      "visual": "block"
-    }
-  },
   "command_aliases": {
     "W": "w",
     "Wq": "wq",
@@ -94,26 +65,18 @@
     "default_profile": "write",
     "default_model": {
       "provider": "zed.dev",
-      "model": "claude-opus-4-thinking"
+      "model": "claude-opus-4-1-thinking"
     }
   },
   "format_on_save": "on",
   "soft_wrap": "preferred_line_length",
   "show_wrap_guides": true,
-  "wrap_guides": [100, 120],
+  "wrap_guides": [80, 100],
+  "preferred_line_length": 100,
   "tabs": {
     "file_icons": true
   },
   "lsp": {
-    "rubocop": {
-      "binary": {
-        "path": "/run/current-system/sw/bin/rubocop",
-        "arguments": ["--lsp"]
-      },
-      "settings": {
-        "use_bundler": false
-      }
-    },
     "tailwindcss-language-server": {
       "settings": {
         "includeLanguages": {
@@ -124,29 +87,60 @@
   },
   "languages": {
     "JavaScript": {
-      "formatter": "prettier",
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
+      "language_servers": ["typescript-language-server", "biome"],
       "code_actions_on_format": {
-        "source.organizeImports": true,
-        "source.fixAll.eslint": true
+        "source.organizeImports.biome": true,
+        "source.fixAll.biome": true
       }
     },
     "TypeScript": {
-      "formatter": "prettier"
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
+      "language_servers": ["typescript-language-server", "biome"]
     },
     "TSX": {
-      "formatter": "prettier"
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
+      "language_servers": ["typescript-language-server", "biome"]
     },
     "CSS": {
-      "formatter": "prettier"
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
+      "language_servers": ["biome", "tailwindcss-language-server"]
     },
     "SCSS": {
-      "formatter": "prettier"
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
+      "language_servers": ["biome"]
     },
     "HTML": {
-      "formatter": "prettier"
+      "formatter": "prettier",
+      "language_servers": ["!biome", "..."]
     },
     "JSON": {
-      "formatter": "prettier"
+      "formatter": {
+        "language_server": {
+          "name": "biome"
+        }
+      },
+      "language_servers": ["biome"]
     },
     "YAML": {
       "formatter": "prettier"
@@ -155,10 +149,11 @@
       "formatter": "prettier"
     },
     "Ruby": {
-      "language_servers": ["!solargraph", "!ruby-lsp", "rubocop"],
+      "language_servers": ["ruby-lsp", "rubocop", "..."],
       "formatter": "language_server"
     },
     "PHP": {
+      "format_on_save": "off",
       "formatter": {
         "external": {
           "command": "/Users/jullweber/.local/bin/phpcbf-wrapper",
@@ -172,12 +167,10 @@
       "formatter": "language_server"
     },
     "Liquid": {
+      "formatter": "prettier",
       "prettier": {
         "allowed": true,
-        "plugins": [
-          "@shopify/prettier-plugin-liquid",
-          "prettier-plugin-tailwindcss"
-        ]
+        "plugins": ["@shopify/prettier-plugin-liquid", "prettier-plugin-tailwindcss"]
       },
       "language_servers": ["tailwindcss-language-server", "..."]
     },
@@ -190,6 +183,9 @@
         }
       }
     },
+    "env": {
+      "language_servers": ["/run/current-system/sw/bin/dotenv-linter"]
+    },
     "Python": {
       "language_servers": ["ruff"],
       "format_on_save": "on",
@@ -199,35 +195,38 @@
   "active_pane_modifiers": {
     "inactive_opacity": 0.95
   },
+  "diagnostics": {
+    "include_warnings": true,
+    "inline": {
+      "enabled": true
+    }
+  },
   "auto_indent_on_paste": false,
   "preview_tabs": {
     "enabled": true
   },
-  "inlay_hints": {
-    "enabled": true,
-    "show_type_hints": true,
-    "show_parameter_hints": true,
-    "show_other_hints": true,
-    "edit_debounce_ms": 700,
-    "scroll_debounce_ms": 50
-  },
-  "git": {
-    "inline_blame": {
-      "enabled": true,
-      "delay_ms": 500
-    }
-  },
-  "completions": {
-    "words": "fallback",
-    "lsp": true,
-    "lsp_fetch_timeout_ms": 0,
-    "lsp_insert_mode": "replace_suffix"
-  },
-  "diagnostics": {
-    "include_warnings": true,
-    "inline": {
-      "enabled": true,
-      "update_debounce_ms": 150
+  "context_servers": {
+    "mcp-server-brave-search": {
+      "source": "extension",
+      "settings": {}
+    },
+    "eslint": {
+      "source": "custom",
+      "command": "/Users/jullweber/.volta/bin/npx",
+      "args": ["eslint", "--mcp"]
+    },
+    "awslabs.aws-documentation-mcp-server": {
+      "source": "custom",
+      "command": "/run/current-system/sw/bin/uvx",
+      "args": ["awslabs.aws-documentation-mcp-server@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "ERROR"
+      }
+    },
+    "prismic-mcp-server": {
+      "source": "custom",
+      "command": "npx",
+      "args": ["-y", "@prismicio/mcp-server"]
     }
   }
 }
