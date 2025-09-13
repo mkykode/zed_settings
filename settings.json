@@ -58,7 +58,10 @@
   "auto_update": true,
   "terminal": {
     "font_family": "MesloLGS NF",
-    "font_size": 12
+    "font_size": 12,
+    "shell": {
+      "program": "/bin/zsh"
+    }
   },
   "agent": {
     "always_allow_tool_actions": true,
@@ -149,7 +152,7 @@
       "formatter": "prettier"
     },
     "Ruby": {
-      "language_servers": ["ruby-lsp", "rubocop", "..."],
+      "language_servers": ["ruby-lsp", "rubocop", "!solargraph", "!steep", "!sorbet"],
       "formatter": "language_server"
     },
     "PHP": {
@@ -173,18 +176,6 @@
         "plugins": ["@shopify/prettier-plugin-liquid", "prettier-plugin-tailwindcss"]
       },
       "language_servers": ["tailwindcss-language-server", "..."]
-    },
-    "Nix": {
-      "language_servers": ["/run/current-system/sw/bin/nixd"],
-      "formatter": {
-        "external": {
-          "command": "/run/current-system/sw/bin/alejandra",
-          "arguments": ["--quiet", "--"]
-        }
-      }
-    },
-    "env": {
-      "language_servers": ["/run/current-system/sw/bin/dotenv-linter"]
     },
     "Python": {
       "language_servers": ["ruff"],
@@ -215,17 +206,9 @@
       "command": "/Users/jullweber/.volta/bin/npx",
       "args": ["eslint", "--mcp"]
     },
-    "awslabs.aws-documentation-mcp-server": {
-      "source": "custom",
-      "command": "/run/current-system/sw/bin/uvx",
-      "args": ["awslabs.aws-documentation-mcp-server@latest"],
-      "env": {
-        "FASTMCP_LOG_LEVEL": "ERROR"
-      }
-    },
     "prismic-mcp-server": {
       "source": "custom",
-      "command": "npx",
+      "command": "/Users/jullweber/.volta/bin/npx",
       "args": ["-y", "@prismicio/mcp-server"]
     }
   }
